@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>dev.finance$</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+	<header>
+		<h1 id="logo">
+			<img src="img/logo.svg" alt="Logo Dev Finance">
+		</h1>
+	</header>
+
+	<main class="container">
+
+		<section id="balanco">
+			<h2 class="sr-only">Balanço</h2>
+
+			<div class="cartao">
+				<h3>
+					<div>Entradas</div>
+					<img src="img/income.svg" alt="imagem de entradas">
+				</h3>
+				<p id="mostraEntrada">R$ 0,00</p>
+			</div>
+
+			<div class="cartao">
+				<h3>
+					<div>Saídas</div>
+					<img src="img/expense.svg" alt="imagem de saídas">
+				</h3>
+				<p id="mostraSaida">R$ 0,00</p>
+			</div>
+
+			<div class="cartao total">
+				<h3>
+					<div>Total</div>
+					<img src="img/total.svg" alt="imagem de total">
+				</h3>
+				<p id="mostraTotal">R$ 0,00</p>
+			</div>
+		</section><!-- .balanco -->
+
+		<section id="transacoes">
+			<h2 class="sr-only">Transações</h2>
+
+			<a href="#" class="botao novo" id="abrir-modal">+ Nova transação</a>
+
+			<table id="data-tabela">
+				<thead>
+					<tr>
+						<th>Descrição</th>
+						<th>Valor</th>
+						<th>Data</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody id="itens"></tbody>
+			</table>
+		</section><!-- .transacoes  -->
+
+	</main><!-- .container -->
+
+	<div class="modal-overlay">
+		<div class="modal">
+			<div class="modal-conteudo">
+
+				<div class="form">
+					<h2>Nova transação</h2>
+					<form action="" id="form-transacao">
+						<div class="grupo-input">
+							<label for="descricao" class="sr-only">Descrição</label>
+							<input type="text" id="descricao" name="descricao" placeholder="Descrição">
+						</div>
+
+						<div class="grupo-input">
+							<label for="valor" class="sr-only">Valor</label>
+							<input type="number" id="valor" step="0.01" name="valor" placeholder="0,00">
+							<small class="ajuda">Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais</small>
+						</div>
+
+						<div class="grupo-input">
+							<label for="data" class="sr-only">Data</label>
+							<input type="date" id="data" name="data" placeholder="00/00/0000">
+						</div>
+
+						<div class="grupo-input acoes">
+							<a href="#" class="botao cancelar" id="fechar-modal">Cancelar</a>
+							<button type="submit" id="salvar">Salvar</button>
+						</div>
+					</form>
+				</div>	
+
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<p>dev.finance$</p>
+	</footer>
+
+	<script src="script.js"></script>
+
+</body>
+
+</html>
